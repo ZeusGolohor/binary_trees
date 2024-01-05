@@ -30,12 +30,6 @@ binary_tree_t *create_bnode(binary_tree_t *parent, int value)
 	if (newnode == NULL)
 		return (NULL);
 	newnode->n = value;
-/*	newnode->left = malloc(sizeof(binary_tree_t *));
-	newnode->right = malloc(sizeof(binary_tree_t *));
-	newnode->parent = malloc(sizeof(binary_tree_t *));
-	if ((newnode->left == NULL) || (newnode->right == NULL) ||
-		(newnode->parent == NULL))
-		return (NULL);*/
 	newnode->left = NULL;
 	newnode->right = NULL;
 	newnode->parent = parent;
