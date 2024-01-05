@@ -1,27 +1,43 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "binary_trees.h"
 
 /**
- * binary_tree_node - A function to create a new binary
- * tree node.
- * @parent: the new node parent node.
- * @value: data to be inserted into the new node.
- * Reurn: binary_tree_t *.
+ * binary_tree_node - A function used to create a new bnode.
+ * @parent: parent node of te new node.
+ * @value: the data to be inserted into the new node.
+ * Return: binary_tree_t *.
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+	binary_tree_t *newnode;
+
+	newnode = create_bnode(parent, value);
+	if (newnode == NULL)
+		return (NULL);
+	return (newnode);
+}
+
 /**
-	binary_tree_t *newnode = NULL;
+ * create_bnode - Used to create a new node.
+ * @parent: parent node of the new node to be created.
+ * @value: the data to be inserted into the node node.
+ * Return: binary_tree_t *
+ */
+binary_tree_t *create_bnode(binary_tree_t *parent, int value)
+{
+	binary_tree_t *newnode;
 
 	newnode = malloc(sizeof(binary_tree_t));
-	if (newnode != NULL)
+	if (newnode == NULL)
 		return (NULL);
-	return (NULL);
-	newnode->parent = malloc(sizeof(binary_tree_t));
-	newnode->parent = parent;
 	newnode->n = value;
+	newnode->left = malloc(sizeof(binary_tree_t *));
+	newnode->right = malloc(sizeof(binary_tree_t *));
+	newnode->parent = malloc(sizeof(binary_tree_t *));
+	if ((newnode->left == NULL) || (newnode->right == NULL) ||
+		(newnode->parent == NULL))
+		return (NULL);
 	newnode->left = NULL;
 	newnode->right = NULL;
-	return (newnode);*/
+	newnode->parent = parent;
+	return (newnode);
 }
