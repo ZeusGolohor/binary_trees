@@ -40,4 +40,7 @@ void preorder_right_tree(const binary_tree_t *, void (*func)(int));
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
 void inorder_right_tree(const binary_tree_t *, void (*func)(int));
 void inorder_left_tree(const binary_tree_t *, void (*func)(int));
+void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
+void postorder_right_tree(const binary_tree_t *, void (*func)(int));
+void postorder_left_tree(const binary_tree_t *, void (*func)(int));
 #endif
