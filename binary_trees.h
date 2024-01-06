@@ -43,4 +43,7 @@ void inorder_left_tree(const binary_tree_t *, void (*func)(int));
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
 void postorder_right_tree(const binary_tree_t *, void (*func)(int));
 void postorder_left_tree(const binary_tree_t *, void (*func)(int));
+size_t binary_tree_height(const binary_tree_t *tree);
+void hcal_left_tree(const binary_tree_t *tree, size_t **);
+void hcal_right_tree(const binary_tree_t *tree, size_t **);
 #endif
